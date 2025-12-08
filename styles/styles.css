@@ -1,11 +1,412 @@
 /* ===== YOUR CSS GOES HERE ===== */
-/* ===== START BY IMPORTING YOUR FONTS ===== */ 
+/* ===== START BY IMPORTING YOUR FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Revalia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
 /* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
-body {
-    background: magenta;
+  body {
+  background-color: #d1dedd;
+  margin:0 20px;
+}
+header {
+    width:100%;
+     margin:20px auto;
+    border-bottom: 1px solid #bbc7c7;
+    align-items: center; 
+    justify-items: center;
+}
+/* code for the scroll snap application on each section featuring panel/stages  */
+main {
+    height: 100vh;
+	overflow-y: auto;
+	scroll-snap-type: y mandatory;
+	-webkit-overflow-scrolling: touch;
+	font-family: "Poppins", sans-serif;
 }
 p {
-    font-size: 2em;
+  font-size: .8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color:#000000;
+}
+/* Setting up Grid Container as the parent in MAIN. 6 columns by 3.5 rows */
+.grid-container {
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 0.5fr repeat(3, 1fr); /* 1 half row, then 5 full rows */
+  gap: 20px;
+  margin:20px auto;
+  width:100%;
+}
+/* .section class is used for the scroll snap code */
+.section {
+	height: 100vh;
+    display: grid; 
+  /* Centers content horizontally within the grid item */
+    justify-items: center; 
+  /* Centers content vertically within the grid item */
+    align-items: center; 
+	
+	scroll-snap-align: start;
+	text-align: center;
+	position: relative;
+}
+/* CHILD GRID ITEMS FOR SECTION - 6 ITEMS- 3 INTERACTIVE
+child divs of section show some visual highlights of path */
+/* 1. audio button */
+.section-sound-button {
+    grid-column: span 1;
+    grid-column: 1;
+    grid-row-start: 2;
+    background-color:none;
+    width:80%;
+}
+/* INTERACTIVE CSS */
+/* code for the audio button, this style is just a button */
+  .player-container {
+    display: grid;
+    gap: 10px;
+}
+.play-pause {
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius:15px;   
+   
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.play-pause:hover {
+    background-color: #0056b3;
+}
+.play-pause.playing {
+    background-color: #dc3545; /* Change color when playing */
+}
+/* 2. title bar */
+.section-title {
+    grid-column: span 6; 
+    background-color:none;
+    width:100%;
+    font-family: "roboto slab", 'serif';
+    text-transform:uppercase;
+    font-size: 1.5rem;
+} 
+/* 3. section blurb with opacity to hold text */
+.section-blurb {
+    grid-column: 3 /span 2;
+    grid-row-start: 2;  
+    background-color:rgba(255, 255, 255, 0.7);
+    padding:15px; 
+    width:100%;
+    border-radius:15px;
+    align-self: start; /* This line ensures the blurb aligns to the top of its grid cell */
+}
+/* 4. info dot interaction  */
+.section-info-dot {
+    grid-column: 1 /span 2;
+    grid-row-start: 3;  
+    background-color:none;
+    width:100%;
+    height:100%;
+    align-self: start; /* This line ensures the blurb aligns to the top of its grid cell */
+}
+/* INTERACTIVE CSS *//*INTERACTIVE FEATURE - INFO DOT TRANSFORMS INTO CARD */
+.dot-to-card {
+    margin: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Roboto Mono','sans-serif';
+    font-weight: 500;;
+}
+.inner {
+    background-color: rgb(7, 218, 165);
+    padding: 1em;
+    border-radius: 10px;
+    width: 250px;
+    clip-path: circle(10% at 90% 17%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+/* Card hover effect */
+.inner:hover {
+    clip-path: circle(85%);
+    background: #007bff;;
+}
+/* Styling for the span inside .inner -the margin impacts the I */
+.inner span {
+    float: right;
+    color: #000000;
+    font-weight: 400;
+    transition: color .5s;
+    position: relative;
+    margin-right: 3%;
+    margin-top:6%; 
+}
+/* When hovering inner, change span color */
+.inner:hover span {
+    color: rgba(255,255,255,0);
+}
+/* Heading styling */
+.inner h3 {
+    color: white;
+    text-align:left;
+    margin: 0;
+}
+/* Paragraph styling */
+.inner p {
+    color: white;
+    font-size: .8rem;
+    text-align:left;
+    line-height: 1.5; /* Adds 1.5 times the font size as line height */
+}
+/* 5. visual highlight-mini spot image */
+.section-round-img {
+    grid-column: 2 / span 1;
+    grid-row-start: 2;  
+  
+    background-color:none;
+    justify-items: center;
+     align-items: center;
+    /*justify-self: start; /* Horizontally centers the item within its cell */
+    /*align-self: start;   /* Vertically centers the item within its cell */
+ }
+/* 6. image mile-marker */
+.section-mile-marker{
+    grid-column: 1 / span 1; /* Places the item in the first column and spans one column */
+    grid-row: 4; /* Places the item in the fourth row */
+    background-color: #ffffff;
+    color: #cc0000;
+    width:20px;
+    min-height:190px;
+    font-family:"roboto mono", 'sans-serif';
+    font-size: 1.3rem;
+}
+/* 7. rectangle button triggers full view panel with more info on topic */
+.section-rectangle-expand-panel {
+    grid-column-start: 6; 
+    grid-row-start: 4;  
+    background-color:#22cc99;
+    width:100%;
+    justify-self: center; /* Horizontally centers the item within its cell */
+    align-self: center;   /* Vertically centers the item within its cell */
+    border-radius:9px;
+    margin-right: 20px;
+}
+/*INTERACTIVE FEATURE - button expands to full panel */
+
+.button {
+  background: transparent;
+  border: none;
+  padding: 1em 2em;
+  color: #000;
+  z-index: 2;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  position: relative;
+/* New: Position the button in the bottom right cell */
+  grid-column: 6 / 7; /* Starts at line 6, ends at line 7 (the last column) */
+  grid-row: 4 / 5; /* Starts at line 4, ends at line 5 (the last row) */
+  /* New: Align the button content to the bottom right of its specific cell */
+  justify-self: end; 
+  align-self: end;
+}
+.button:active {
+  outline: none;
+  opacity: 0;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #22cc99;
+  width: 100vw;
+  height: 100vh;
+  display: grid; /* Use grid to center modal content */
+  width:100%;
+  font-family: 'roboto', 'sans-serif';
+  font-size: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  transition: clip-path 0.4s cubic-bezier(0,.58,.36,1);
+
+  /* Initial state: modal is visually hidden (clips to button's position/size) */
+  /* We need to solve for the initial unexpanded state of the modal element's background.
+  clip-path: polygon(
+    calc(50% - 3em) calc(50% - 1.5em),
+    calc(50% + 3em) calc(50% - 1.5em),
+    calc(50% + 3em) calc(50% + 1.5em),
+    calc(50% - 3em) calc(50% + 1.5em)); */
+ 
+  pointer-events: none; /* prevent clicks when closed */
+    /* Use CSS Variables (defaults will keep it centered if JS fails) */
+  --btn-width: .125em;
+  --btn-height: .125em;
+  --btn-top: calc(50% - var(--btn-height) / 2);
+  --btn-left: calc(50% - var(--btn-width) / 2);
+
+  clip-path: polygon(
+    var(--btn-left) var(--btn-top),
+    calc(var(--btn-left) + var(--btn-width)) var(--btn-top),
+    calc(var(--btn-left) + var(--btn-width)) calc(var(--btn-top) + var(--btn-height)),
+    var(--btn-left) calc(var(--btn-top) + var(--btn-height))
+  );
+  /* Ensure the modal covers the whole page, not just the grid container area 
+  grid-column: 1 / -1; 
+  grid-row: 1 / -1;  */
+}
+.modal.open {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  pointer-events: auto;
+}
+.modal__content {
+  opacity: 0;
+  transform: translate3D(0,-1em,0);
+  transition: opacity 0.1s, transform 0.3s;
+  padding: 1.5em;
+  
+  color: #000;
+  text-align: center; 
+}
+.modal.open .modal__content {
+  opacity: 1;
+  transform: translate3D(0,1em,0);
+  transition: opacity 0.3s 0.2s, transform 0.6s 0.2s cubic-bezier(0,.65,.06,.98);
+}
+.img-modal {
+  max-width: 65%;
+   justify-items: center;
+  align-items: center; 
+}
+
+/* LAND-END AND 1-9 SECTIONS . EACH CONTAINS A BACKGROUND IMAGE */
+/* location - LAND */
+.section-1and {
+   background-color:gray;
+   background-image: url("../images/bikeri-nav.jpg");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+}
+/* location - providence */
+.section-1 {
+  background-color: ivory;
+  background-image: url("../images/eastbaybikepath-wash-bridgeWaover-seekonk-Ssark.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - riverside A */
+.section-2 {
+  background-color:ivory;
+  background-image:url("../images/e-prov-marsh-path.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - riverside B */
+.section-3 {
+  background-color:ivory;
+   background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - riverside C */
+.section-4 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Barrington A */
+.section-5 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Barrington B */
+.section-6 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Warren */
+.section-7 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Bristol A */
+.section-8 {
+  background-color:ivory;
+  background-image: url('https://cloudfront.traillink.com/photos/east-bay-bike-path-(ri)_230812_lg.jpg;');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Bristol A */
+.section-9 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - Bristol b */
+.section-10 {
+  background-color:ivory;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - END */
+.section-end {
+  background-color:gold;
+  background-image:none ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
