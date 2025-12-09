@@ -325,63 +325,64 @@ child divs of section show some visual highlights of path */
 /* location - providence */
 .section-1 {
   background-color: ivory;
-  background-image: url("../images/eastbaybikepath-wash-bridgeWaover-seekonk-Ssark.jpg");
   background-repeat: no-repeat;
+  background-image: url("../images/eastbaybikepath-bridge-providence-start.jpg");
   background-position: center center;
   background-size: cover;
 }
-/* location - riverside A */
+/* location - e providence */
 .section-2 {
+  background-color: ivory;
+  background-repeat: no-repeat;
+  background-image: url("../images/look-back-tracks-providence.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+/* location - e providence */
+.section-3 {
+  background-color: ivory;
+  background-repeat: no-repeat;
+  background-image: url("../images/e-prov-path-nice.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+/* location - riverside A */
+.section-4 {
   background-color:ivory;
-  background-image:url("../images/e-prov-marsh-path.jpg");
+  background-image: url("../images/pink-cycling-rabbit.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 /* location - riverside B */
-.section-3 {
-  background-color:ivory;
-   background-image: none;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-/* location - riverside C */
-.section-4 {
-  background-color:ivory;
-  background-image:none ;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-/* location - Barrington A */
 .section-5 {
   background-color:ivory;
-  background-image:none ;
+   background-image:url("../images/prov-river-walk-riverside.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* location - barrington A */
+.section-6 {
+  background-color:ivory;
+  background-image: url("../images/barrington-bridge-north.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 /* location - Barrington B */
-.section-6 {
+.section-7 {
   background-color:ivory;
-  background-image:none ;
+  background-image:url("../images/barrington-bridge-south.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 /* location - Warren */
-.section-7 {
-  background-color:ivory;
-  background-image:none ;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-/* location - Bristol A */
 .section-8 {
   background-color:ivory;
-  background-image: url('https://cloudfront.traillink.com/photos/east-bay-bike-path-(ri)_230812_lg.jpg;');
+  background-image: url("../images/warren-concerts-poster.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -389,19 +390,28 @@ child divs of section show some visual highlights of path */
 /* location - Bristol A */
 .section-9 {
   background-color:ivory;
-  background-image:none ;
+  background-image:url("../images/bristol-phragmites.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
-/* location - Bristol b */
+/* location - Bristol B */
 .section-10 {
   background-color:ivory;
-  background-image:none ;
+  background-image: url("../images/bristol-marshes.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+/* location - Bristol C */
+.section-11 {
+  background-color:ivory;
+  background-image:url("../images/railroad-mileagepost-endpath-bristol.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 /* location - END */
 .section-end {
   background-color:gold;
