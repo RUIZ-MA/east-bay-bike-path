@@ -9,7 +9,15 @@
 /* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
 
-  body {
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
   background-color: #d1dedd;
   margin:0 20px;
 }
@@ -298,9 +306,10 @@ child divs of section show some visual highlights of path */
   transform: translate3D(0,-1em,0);
   transition: opacity 0.1s, transform 0.3s;
   padding: 1.5em;
-  
   color: #000;
-  text-align: center; 
+  text-align: center;
+  max-width: 50em; 
+  /* i reinstated max width */
 }
 .modal.open .modal__content {
   opacity: 1;
@@ -358,7 +367,7 @@ child divs of section show some visual highlights of path */
 /* location - riverside B */
 .section-5 {
   background-color:ivory;
-   background-image:url("../images/prov-river-walk-riverside.jpg");
+  background-image:url("../images/prov-river-walk-riverside.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

@@ -34,6 +34,7 @@ function togglePlayPause(button) {
         });
     }
 }
+////////////////////////////////////////////////////////
 /* PROVIDENCE 1 - start- bridge linear park imgs */
 
 /* SCRIPT FOR THE GREEN RECTANGLE BUTTON EXPANDING TO A LARGE PANEL TO FILL VIEW*/
@@ -63,7 +64,6 @@ window.addEventListener('load', updateModalClipPath);
 // Update position if the window resizes or layout shifts
 window.addEventListener('resize', updateModalClipPath);
 // -------------------------------
-
 
 // Animate modal opening
 linearBtn.addEventListener('click', (e) => {
@@ -110,7 +110,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-/* PROVIDENCE 2 - start- ponham lighthouse */
+/* PROVIDENCE 2 - Pomham Rocks lighthouse */
 
 /* SCRIPT FOR THE GREEN RECTANGLE BUTTON EXPANDING TO A LARGE PANEL TO FILL VIEW*/
 const lightBtn = document.querySelector('#lightBtn');
@@ -186,7 +186,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-/* PROVIDENCE 3 - turbines */
+/* PROVIDENCE 3 - turbines grasses east providence */
 
 /* SCRIPT FOR THE GREEN RECTANGLE BUTTON EXPANDING TO A LARGE PANEL TO FILL VIEW*/
 const turbineBtn = document.querySelector('#turbineBtn');
