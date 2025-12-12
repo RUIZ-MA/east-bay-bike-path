@@ -21,13 +21,13 @@ body {
   background-color: #d1dedd;
   margin:0 20px;
 }
-header {
+/* header {
     width:100%;
      margin:20px auto;
     border-bottom: 1px solid #bbc7c7;
     align-items: center; 
     justify-items: center;
-}
+} */
 /* code for the scroll snap application on each section featuring panel/stages  */
 main {
     height: 100vh;
@@ -37,7 +37,7 @@ main {
 	font-family: "Poppins", sans-serif;
 }
 p {
-  font-size: .8em;
+  font-size: 1em;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -46,23 +46,54 @@ h1 {
   font-family: "Revalia", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 3.5rem;
 }
-
+.h1-tagline {
+  font-family: "roboto mono", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+}
 h2 {
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 2.5rem;
+   color:#000;
+}
+.h2_mile_marker {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+   background-color: #ffffff;
+   color: #dc3545;
+   min-width:200px;
+   height:80px;
+   font-family:"roboto mono", 'sans-serif';
+   font-size: 2.5rem;
+   padding:5px;
+   border-radius: 9px;
 }
 
 h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.7;
   color:#000000;
+}
+h4 {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color:#ffffff;
 }
 /* Setting up Grid Container as the parent in MAIN. 6 columns by 3.5 rows */
 .grid-container {
@@ -88,13 +119,14 @@ h3 {
 }
 /* CHILD GRID ITEMS FOR SECTION - 6 ITEMS- 3 INTERACTIVE
 child divs of section show some visual highlights of path */
-/* 1. audio button */
+
+/* 1. AUDIO BUTTON DESIGN */
 .section-sound-button {
     grid-column: span 1;
-    grid-column: 1;
-    grid-row-start: 2;
+    grid-column: 2;
+    grid-row-start: 4;
     background-color:none;
-    width:80%;
+    width:60%;
 }
 /* INTERACTIVE CSS */
 /* code for the audio button, this style is just a button */
@@ -107,16 +139,38 @@ child divs of section show some visual highlights of path */
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius:15px;   
-   
+    border-radius:10px; 
     cursor: pointer;
     transition: background-color 0.3s;
+     font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color:#ffffff;
+  
 }
 .play-pause:hover {
     background-color: #0056b3;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color:#ffffff;
 }
 .play-pause.playing {
     background-color: #dc3545; /* Change color when playing */
+      font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color:#ffffff;
+  
 }
 /* 2. title bar */
 .section-title {
@@ -125,17 +179,30 @@ child divs of section show some visual highlights of path */
     width:100%;
     font-family: "roboto slab", 'serif';
     text-transform:uppercase;
-    font-size: 1.5rem;
 } 
+/* 3. section blurb with opacity to hold text */
+.section-stats {
+    grid-column: 2 /span 4;
+    grid-row-start: 2;  
+    background-color:rgba(255, 255, 255, 0.7);
+    padding-left:40px;
+    padding-right:40px; 
+    width:100%;
+    border-radius:15px;
+    align-self: start; /* This line ensures the blurb aligns to the top of its grid cell */
+    text-align: left;
+}
 /* 3. section blurb with opacity to hold text */
 .section-blurb {
     grid-column: 3 /span 2;
     grid-row-start: 2;  
     background-color:rgba(255, 255, 255, 0.7);
-    padding:15px; 
+    padding-left:40px;
+    padding-right:40px; 
     width:100%;
     border-radius:15px;
     align-self: start; /* This line ensures the blurb aligns to the top of its grid cell */
+    text-align: left;
 }
 /* 4. info dot interaction  */
 .section-info-dot {
@@ -153,13 +220,13 @@ child divs of section show some visual highlights of path */
     justify-items: center;
     align-items: center;
     font-family: 'Roboto Mono','sans-serif';
-    font-weight: 500;;
+    font-weight: 400;
 }
 .inner {
     background-color: rgb(7, 218, 165);
     padding: 1em;
     border-radius: 10px;
-    width: 250px;
+    width: 370px;
     clip-path: circle(10% at 90% 17%);
     transition: all .5s ease-in-out;
     cursor: pointer;
@@ -167,7 +234,7 @@ child divs of section show some visual highlights of path */
 /* Card hover effect */
 .inner:hover {
     clip-path: circle(85%);
-    background: #007bff;;
+    background: #dc3545;
 }
 /* Styling for the span inside .inner -the margin impacts the I */
 .inner span {
@@ -177,7 +244,7 @@ child divs of section show some visual highlights of path */
     transition: color .5s;
     position: relative;
     margin-right: 3%;
-    margin-top:6%; 
+    margin-top:10%; 
 }
 /* When hovering inner, change span color */
 .inner:hover span {
@@ -188,24 +255,43 @@ child divs of section show some visual highlights of path */
     color: white;
     text-align:left;
     margin: 0;
+    font-family: 'Roboto Mono','sans-serif';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.7rem; 
+    
 }
 /* Paragraph styling */
 .inner p {
     color: white;
-    font-size: .8rem;
+    
     text-align:left;
     line-height: 1.5; /* Adds 1.5 times the font size as line height */
+    font-family: 'Roboto Mono','sans-serif';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem; 
 }
 /* 5. visual highlight-mini spot image */
 .section-round-img {
     grid-column: 2 / span 1;
-    grid-row-start: 2;  
+    grid-row-start: 3;  
   
     background-color:none;
     justify-items: center;
      align-items: center;
     /*justify-self: start; /* Horizontally centers the item within its cell */
     /*align-self: start;   /* Vertically centers the item within its cell */
+ }
+ .section-round-img-lg {
+    grid-column: 2 / span 1;
+    grid-row-start: 3;  
+  
+    background-color:none;
+    justify-items: center;
+     align-items: center;
  }
 /* 6. image mile-marker */
 .section-mile-marker{
@@ -218,17 +304,17 @@ child divs of section show some visual highlights of path */
     font-family:"roboto mono", 'sans-serif';
     font-size: 1.3rem;
 }
-/* 7. rectangle button triggers full view panel with more info on topic */
+/* 7. rectangle button triggers full view panel with more info on topic 
 .section-rectangle-expand-panel {
     grid-column-start: 6; 
     grid-row-start: 4;  
     background-color:#22cc99;
     width:100%;
-    justify-self: center; /* Horizontally centers the item within its cell */
-    align-self: center;   /* Vertically centers the item within its cell */
+    justify-self: center; 
+    align-self: center; 
     border-radius:9px;
     margin-right: 20px;
-}
+}*/
 /*INTERACTIVE FEATURE - button expands to full panel */
 
 .button {
@@ -237,24 +323,39 @@ child divs of section show some visual highlights of path */
   padding: .5em .5em;
   color: #000;
   z-index: 2;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   cursor: pointer;
   transition: opacity 0.2s;
   position: relative;
- 
   justify-self: end; 
   align-self: end;
 }
 
-.img-modal {
-  max-width: 70%;
-   justify-items: center;
-  align-items: center; 
-}
+
+/* this is the green rectangle on the layout where the button resides */
 .expand-block {
     grid-column-start: 5; 
+    grid-row-start: 4;  
+    background-color:#22cc99;
+    width:100%;
+    justify-self: center; /* Horizontally centers the item within its cell */
+    align-self: center;   /* Vertically centers the item within its cell */
+    border-radius:9px;
+}
+.expand-block-land {
+    grid-column-start: 4; 
+    grid-row-start: 4;  
+    background-color:#22cc99;
+    width:100%;
+    justify-self: center; /* Horizontally centers the item within its cell */
+    align-self: center;   /* Vertically centers the item within its cell */
+    border-radius:9px;
+}
+.expand-block-start-scroll {
+    grid-column-start: 3; 
     grid-row-start: 4;  
     background-color:#22cc99;
     width:100%;
@@ -287,8 +388,22 @@ child divs of section show some visual highlights of path */
   opacity: 0;
   transform: translateY(-1em);
   transition: opacity 0.3s 0.2s, transform 0.6s 0.2s;
+  max-width: 90%;
+  
 }
-
+.img-modal {
+  justify-items: center;
+  align-items: center; 
+  
+}
+.p_modal_content {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6em;
+  font-weight: 400;
+  color: #000;
+  max-width: 80ch;
+  text-align: left;
+}
 .expand-panel__modal.open .modal__content {
   opacity: 1;
   transform: translateY(0);
@@ -296,8 +411,8 @@ child divs of section show some visual highlights of path */
 /* LAND-END AND 1-9 SECTIONS . EACH CONTAINS A BACKGROUND IMAGE */
 /* location - LAND */
 .section-1and {
-   background-color:gray;
-   background-image: url("../images/bikeri-nav.jpg");
+   background-color:gold;
+   background-image: url("../images/east-bay-bike-path-landing-art.png");
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
@@ -362,7 +477,7 @@ child divs of section show some visual highlights of path */
 /* location - Warren */
 .section-8 {
   background-color:ivory;
-  background-image: url("../images/warren-concerts-poster.jpg");
+  background-image: url("../images/dels2-warren-ri.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -399,4 +514,29 @@ child divs of section show some visual highlights of path */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.c-dashed-line__path {
+	animation: c-dashed-line-path 3s ease-in-out infinite alternate;
+	fill: none;
+	stroke: #000000;
+	stroke-dasharray: 1600; /* this is the entire length of the line */
+	stroke-dashoffset: 1600; /* this is the entire length of the line */
+	stroke-width: 10;
+}
+
+.c-dashed-line__dash {
+	fill: none;
+	stroke: #FFFFFF; /* this must match the background color */
+	stroke-dasharray: 16 10; /* draws a 10px dash line with a 16px gap between */
+	stroke-width: 12; /* make the dashed line slightly bigger than the one it's covering */
+}
+
+@keyframes c-dashed-line-path {
+	from {
+		stroke-dashoffset: 1600;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
 }
